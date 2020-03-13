@@ -20,22 +20,21 @@
     <?php
             //load Composer Autoloader///
             require_once "incl/Hotel.php";
-            require_once "incl/Compare.php";
-            require_once "incl/Booking.php";
+            require_once "incl/compare.php";
 
             //hotel Properties///Name,Daily,Wifi,pool,bar,spa,buffet
-            $Yotel = new Hotel (“Yotel”, 500, true, false, true, false, true);;
-            $Ibis = new Hotel (“Ibis_Styles”, 750, true, true, true, false, true);;
-            $Indigo = new Hotel (“Hotel_Indigo”, 1000, true, true, true, true, true);
-            $Sandman = new Hotel (“Sandman_Signature”, 800, true, false, true, false, false);
-            $Sleeperz = new Hotel (“Sleeperz_Hotel”, 600, false, false, true, false, false);
-            $Motel = new Hotel (“Motel_One”, 550, false, false, true, false, true);
-            $Raddisons = new Hotel (“Radisson_Red”, 1000, true, true, true, true, true);
-            $Residence = new Hotel (“Residence_Inn”, 1000, true, false, true, true, true);
-            $Hampton = new Hotel (“Hampton”, 1000, true, false, true, true, true);
-            $Alexandra = new Hotel (“Alexandra_Hotel”, 1200, true, false, true, true, true);
+            $Yotel = new Hotel ("Yotel", 500, true, false, true, false, true,false,true);;
+            $Ibis = new Hotel ("Ibis_Styles", 750, true, true, true, false, true,false,true);;
+            $Indigo = new Hotel ("Hotel_Indigo", 1000, true, true, true, true, true,false,true);
+            $Sandman = new Hotel ("Sandman_Signature", 800, true, false, true, false, false,true,false);
+            $Sleeperz = new Hotel ("Sleeperz_Hotel", 600, false, false, true, false, false,true,false);
+            $Motel = new Hotel ("Motel_One", 550, false, false, true, false, true,false,true);
+            $Raddisons = new Hotel ("Radisson_Red", 1000, true, true, true, true, true,false,true);
+            $Residence = new Hotel ("Residence_Inn", 1000, true, false, true, true, true,false,true);
+            $Hampton = new Hotel ("Hampton", 1000, true, false, true, true, true,false,true);
+            $Alexandra = new Hotel ("Alexandra_Hotel", 1200, true, false, true, true, true,false,true);
 
-            $allHotels=array($Yotel, $Ibis_Styles,$Hotel_Indigo,$Sandman_Signature,$Sleeperz_Hotel,$Motel_One,$Radissons_Red,$Residence_Inn,$Hampton,$Alexandra_Hotel);
+            $allHotels=array($Yotel, $Ibis,$Indigo,$Sandman,$Sleeperz,$Motel,$Raddisons,$Residence,$Hampton,$Alexandra);
     ?>
 
     
@@ -117,7 +116,7 @@
             $comparison>daysbooked($_POST['indate'],$_POST['outdate']);
 
             $comparison->displayInfo();
-
+            
             echo "The cost of the stay at Hotel 1 is" cost($allHotels,"name", $_POST['hotela'], $comparison->daysBooked,"daily");
             echo "<br> The cost of stay at Hotel 2 is" cost($allHotels, "name", $_POST['hotelb'], $comparison->daysBooked, "daily");
 
