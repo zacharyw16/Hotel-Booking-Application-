@@ -10,9 +10,9 @@
     
     class Hotel {
 
-        public $name, $dailyrate, $wifi, $pool, $bar, $spa, $buffet;
+        public $name, $dailyrate, $wifi, $pool, $bar, $spa, $buffet, $smoking, $parking;
 
-        function __construct($n0, $n1, $n2, $n3, $n4, $n5, $n6) {
+        function __construct($n0, $n1, $n2, $n3, $n4, $n5, $n6, $n7, $n8) {
             $this->name = $n0;
             $this->dailyrate = $n1;
             $this->wifi = $n2;
@@ -20,6 +20,9 @@
             $this->bar = $n4;
             $this->spa = $n5;
             $this->buffet = $n6;
+            $this->smoking = $n7;
+            $this->parking = $n8;
+
         }
         
             
